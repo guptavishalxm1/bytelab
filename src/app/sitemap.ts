@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import { SERVICES_DATA } from "@/data/services";
 import { PROJECTS_DATA } from "@/data/projects";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://bytelabinfotech.in";
 
