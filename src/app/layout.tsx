@@ -95,6 +95,9 @@ export const metadata: Metadata = {
     shortcut: "/logo.png",
     apple: "/logo.png",
   },
+  verification: {
+    google: "google2c10c8d1c0c46f9a",
+  },
 };
 
 const organizationSchema = {
