@@ -21,15 +21,26 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="text-xs font-mono text-slate-500">
-          Last Updated: January 2026 • Operating Domain: bytelabinfotech.in
+          Last Updated: February 2026 • Legal Entity: {COMPANY_DATA.legalName} • GSTIN: {COMPANY_DATA.gstin}
         </p>
       </div>
 
       <div className="bg-white border border-slate-200 rounded-2xl p-8 sm:p-12 space-y-8 text-sm text-slate-700 leading-relaxed">
+        {/* Entity Identification */}
+        <section className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1.5 text-xs font-mono text-slate-800">
+          <div className="font-bold text-slate-900 text-sm font-sans mb-1">Data Controller & Business Information</div>
+          <div><span className="text-slate-500">Legal Entity:</span> {COMPANY_DATA.legalName} (Proprietor: {COMPANY_DATA.proprietor})</div>
+          <div><span className="text-slate-500">Trade / Brand:</span> {COMPANY_DATA.name}</div>
+          <div><span className="text-slate-500">GSTIN:</span> <span className="font-bold text-blue-600">{COMPANY_DATA.gstin}</span></div>
+          <div><span className="text-slate-500">Official Email:</span> {COMPANY_DATA.primaryEmail}</div>
+          <div><span className="text-slate-500">Direct Phone:</span> {COMPANY_DATA.phone}</div>
+          <div><span className="text-slate-500">State & Country:</span> {COMPANY_DATA.headquarters.state}, India</div>
+        </section>
+
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-slate-900">1. Introduction & Scope</h2>
           <p>
-            ByteLab Infotech (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) operates the website{" "}
+            ByteLab Infotech (owned and operated by <strong>{COMPANY_DATA.legalName}</strong>, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) operates the website{" "}
             <strong>https://bytelabinfotech.in</strong>. This Privacy Policy outlines how we collect, handle, protect, and process information collected through our official digital touchpoints and project inquiries.
           </p>
         </section>
@@ -67,12 +78,24 @@ export default function PrivacyPage() {
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-slate-900">5. Contact Information</h2>
           <p>
-            For inquiries regarding privacy, data retention, or NDA execution, contact:
+            For inquiries regarding privacy, data retention, or NDA execution, contact our data protection desk:
           </p>
-          <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl font-mono text-xs text-slate-800 space-y-1">
-            <div>ByteLab Infotech — Privacy Office</div>
-            <div>Official Email: {COMPANY_DATA.primaryEmail}</div>
-            <div>Web Domain: https://bytelabinfotech.in</div>
+          <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl font-mono text-xs text-slate-800 space-y-1.5">
+            <div><strong>Entity:</strong> {COMPANY_DATA.legalName} (ByteLab Infotech)</div>
+            <div><strong>GSTIN:</strong> {COMPANY_DATA.gstin}</div>
+            <div>
+              <strong>Email:</strong>{" "}
+              <a href={`mailto:${COMPANY_DATA.primaryEmail}`} className="text-blue-600 hover:underline">
+                {COMPANY_DATA.primaryEmail}
+              </a>
+            </div>
+            <div>
+              <strong>Phone:</strong>{" "}
+              <a href={`tel:${COMPANY_DATA.rawPhone}`} className="text-blue-600 hover:underline">
+                {COMPANY_DATA.phone}
+              </a>
+            </div>
+            <div><strong>Address:</strong> {COMPANY_DATA.headquarters.address}</div>
           </div>
         </section>
       </div>

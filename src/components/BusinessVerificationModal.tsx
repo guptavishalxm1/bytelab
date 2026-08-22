@@ -43,6 +43,10 @@ export default function BusinessVerificationModal({ isOpen, onClose }: ModalProp
           ByteLab Infotech Corporate Credentials
         </h3>
 
+        <div className="mt-1 text-xs font-mono text-slate-600">
+          Legal Entity: <span className="font-bold text-slate-900">{COMPANY_DATA.legalName}</span> (Proprietor: {COMPANY_DATA.proprietor})
+        </div>
+
         <p className="text-xs text-slate-600 mt-1">
           Formal registration documentation and enterprise identity records verified under Indian regulatory frameworks.
         </p>

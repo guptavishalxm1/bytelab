@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ShieldCheck, Mail, Globe, ArrowUpRight } from "lucide-react";
+import { ShieldCheck, Mail, Phone, Globe, ArrowUpRight } from "lucide-react";
 import { FOOTER_SECTIONS } from "@/data/navigation";
 import { COMPANY_DATA } from "@/data/company";
 
@@ -18,10 +18,10 @@ export default function Footer() {
               </div>
               <div>
                 <div className="text-sm font-semibold text-white">
-                  Formally Registered Technology Enterprise
+                  Formally Registered Technology Enterprise • {COMPANY_DATA.legalName}
                 </div>
                 <div className="text-xs text-slate-400">
-                  Operates under registered business credentials: GSTIN • UDYAM • D-U-N-S® • bytelabinfotech.in
+                  GSTIN: <span className="font-mono text-emerald-400 font-semibold">{COMPANY_DATA.gstin}</span> • UDYAM • D-U-N-S®
                 </div>
               </div>
             </div>
@@ -57,21 +57,26 @@ export default function Footer() {
             </div>
 
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
-              ByteLab Infotech is a software engineering organization architecting reliable web applications, mobile apps, Java backends, and business automation software designed around real business outcomes.
+              ByteLab Infotech (Legal Entity: {COMPANY_DATA.legalName}) is a software engineering organization architecting reliable web applications, mobile apps, Java backends, and business automation software designed around real business outcomes.
             </p>
 
             <div className="pt-2 space-y-2 text-xs font-mono text-slate-400">
               <div className="flex items-center gap-2">
-                <Globe className="w-3.5 h-3.5 text-blue-400" />
-                <span>Domain: bytelabinfotech.in</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-blue-400" />
+                <Mail className="w-3.5 h-3.5 text-blue-400 shrink-0" />
                 <a
                   href={`mailto:${COMPANY_DATA.primaryEmail}`}
-                  className="hover:text-blue-400 transition-colors"
+                  className="hover:text-blue-400 transition-colors truncate"
                 >
                   {COMPANY_DATA.primaryEmail}
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                <a
+                  href={`tel:${COMPANY_DATA.rawPhone}`}
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  {COMPANY_DATA.phone}
                 </a>
               </div>
             </div>
@@ -111,16 +116,20 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            © {new Date().getFullYear()} ByteLab Infotech. All rights reserved. Operating through{" "}
-            <span className="font-mono text-slate-300">bytelabinfotech.in</span>.
+            © {new Date().getFullYear()} ByteLab Infotech (Legal Entity:{" "}
+            <span className="text-slate-300 font-semibold">{COMPANY_DATA.legalName}</span> | GSTIN:{" "}
+            <span className="font-mono text-slate-300">{COMPANY_DATA.gstin}</span>). All rights reserved.
           </div>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <Link href="/privacy" className="hover:text-slate-200 transition-colors">
               Privacy Policy
             </Link>
             <Link href="/terms" className="hover:text-slate-200 transition-colors">
               Terms of Service
+            </Link>
+            <Link href="/refund-policy" className="hover:text-slate-200 transition-colors">
+              Refund Policy
             </Link>
             <Link href="/cookies" className="hover:text-slate-200 transition-colors">
               Cookie Policy

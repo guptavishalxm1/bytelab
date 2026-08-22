@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, CheckCircle2, ShieldCheck, Mail, Globe, Clock, ArrowRight } from "lucide-react";
+import { Send, CheckCircle2, ShieldCheck, Mail, Phone, Clock, ArrowRight } from "lucide-react";
 import { COMPANY_DATA } from "@/data/company";
 
 const PROJECT_TYPES = [
@@ -105,14 +105,17 @@ export default function ProjectInquiryForm() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="p-2 bg-slate-50 border border-slate-100 rounded-lg text-blue-600 shrink-0">
-                  <Globe className="w-4 h-4" />
+                <div className="p-2 bg-slate-50 border border-slate-100 rounded-lg text-emerald-600 shrink-0">
+                  <Phone className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono text-slate-400">Official Business Domain</div>
-                  <div className="text-sm font-semibold text-slate-900 font-mono">
-                    {COMPANY_DATA.domain}
-                  </div>
+                  <div className="text-xs font-mono text-slate-400">Direct Contact</div>
+                  <a
+                    href={`tel:${COMPANY_DATA.rawPhone}`}
+                    className="text-sm font-semibold text-slate-900 font-mono hover:text-blue-600 transition-colors"
+                  >
+                    {COMPANY_DATA.phone}
+                  </a>
                 </div>
               </div>
 

@@ -49,7 +49,7 @@ export const FOOTER_SECTIONS: NavGroup[] = [
       { title: "About ByteLab", href: "/about" },
       { title: "Business Information & Verification", href: "/business" },
       { title: "Start a Project", href: "/contact" },
-      { title: "Official Domain Verification", href: "/business#domain-verification" },
+      { title: "Statutory Tax & MSME Records", href: "/business" },
     ],
   },
   {
@@ -57,6 +57,7 @@ export const FOOTER_SECTIONS: NavGroup[] = [
     links: [
       { title: "Privacy Policy", href: "/privacy" },
       { title: "Terms of Service", href: "/terms" },
+      { title: "Cancellation & Refund Policy", href: "/refund-policy" },
       { title: "Cookie Policy", href: "/cookies" },
       { title: "Corporate Credentials", href: "/business" },
     ],

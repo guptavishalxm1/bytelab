@@ -24,7 +24,10 @@ export default function ContactPage() {
     mainEntity: {
       "@type": "Organization",
       name: COMPANY_DATA.name,
+      legalName: COMPANY_DATA.legalName,
+      taxID: COMPANY_DATA.gstin,
       email: COMPANY_DATA.primaryEmail,
+      telephone: COMPANY_DATA.phone,
       url: "https://bytelabinfotech.in",
     },
   };
@@ -46,8 +49,41 @@ export default function ContactPage() {
           Discuss Your Project Architecture
         </h1>
         <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-          Whether you have a detailed technical specification or need help evaluating architecture and scope, we review all inquiries with an engineering perspective.
+          Whether you have a detailed technical specification or need help evaluating architecture and scope, we review all inquiries with an engineering perspective. Contact founder and lead architect Vishal Gupta directly.
         </p>
+      </section>
+
+      {/* Registered Entity & Direct Contact Summary Banner */}
+      <section className="p-5 sm:p-6 bg-slate-900 text-slate-200 border border-slate-800 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="space-y-1">
+          <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-semibold uppercase tracking-wider">
+            <ShieldCheck className="w-4 h-4" />
+            <span>Formally Registered Entity</span>
+          </div>
+          <div className="text-sm font-bold text-white">
+            {COMPANY_DATA.name} • Legal Entity: {COMPANY_DATA.legalName} (Proprietor: {COMPANY_DATA.proprietor})
+          </div>
+          <div className="text-xs font-mono text-slate-400">
+            GSTIN: <span className="text-emerald-400 font-semibold">{COMPANY_DATA.gstin}</span> • State: {COMPANY_DATA.headquarters.state}, India
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3 pt-2 md:pt-0">
+          <a
+            href={`tel:${COMPANY_DATA.rawPhone}`}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-semibold font-mono transition-colors"
+          >
+            <Phone className="w-3.5 h-3.5" />
+            <span>{COMPANY_DATA.phone}</span>
+          </a>
+          <a
+            href={`mailto:${COMPANY_DATA.primaryEmail}`}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg text-xs font-semibold font-mono transition-colors"
+          >
+            <Mail className="w-3.5 h-3.5" />
+            <span>{COMPANY_DATA.primaryEmail}</span>
+          </a>
+        </div>
       </section>
 
       {/* Direct Contact Cards */}
@@ -56,42 +92,48 @@ export default function ContactPage() {
           <div className="p-2 bg-blue-50 border border-blue-100 rounded-lg text-blue-600 w-fit">
             <Mail className="w-4 h-4" />
           </div>
-          <div className="text-xs font-mono text-slate-400">Official Inquiries</div>
+          <div className="text-xs font-mono text-slate-400">Direct Email</div>
           <div className="text-sm font-bold text-slate-900 truncate">
             <a href={`mailto:${COMPANY_DATA.primaryEmail}`} className="hover:text-blue-600 transition-colors">
               {COMPANY_DATA.primaryEmail}
             </a>
           </div>
-          <div className="text-[11px] text-slate-500">Direct inbox to leadership</div>
+          <div className="text-[11px] text-slate-500">Official inquiries & proposals</div>
         </div>
 
         <div className="bg-white border border-slate-200 rounded-xl p-5 space-y-2">
           <div className="p-2 bg-emerald-50 border border-emerald-100 rounded-lg text-emerald-600 w-fit">
-            <Globe className="w-4 h-4" />
+            <Phone className="w-4 h-4" />
           </div>
-          <div className="text-xs font-mono text-slate-400">Official Domain</div>
+          <div className="text-xs font-mono text-slate-400">Direct Phone / Call</div>
           <div className="text-sm font-bold text-slate-900 font-mono">
-            {COMPANY_DATA.domain}
+            <a href={`tel:${COMPANY_DATA.rawPhone}`} className="hover:text-emerald-600 transition-colors">
+              {COMPANY_DATA.phone}
+            </a>
           </div>
-          <div className="text-[11px] text-slate-500">Registered Corporate Host</div>
+          <div className="text-[11px] text-slate-500">Mon–Fri: 9:30 AM – 6:30 PM IST</div>
         </div>
 
         <div className="bg-white border border-slate-200 rounded-xl p-5 space-y-2">
           <div className="p-2 bg-purple-50 border border-purple-100 rounded-lg text-purple-600 w-fit">
-            <Clock className="w-4 h-4" />
+            <ShieldCheck className="w-4 h-4" />
           </div>
-          <div className="text-xs font-mono text-slate-400">Turnaround Time</div>
-          <div className="text-sm font-bold text-slate-900">Within 24 Hours</div>
-          <div className="text-[11px] text-slate-500">Standard business days</div>
+          <div className="text-xs font-mono text-slate-400">GST Registration</div>
+          <div className="text-sm font-bold text-slate-900 font-mono truncate">
+            {COMPANY_DATA.gstin}
+          </div>
+          <div className="text-[11px] text-slate-500">Verified GSTIN (Uttar Pradesh)</div>
         </div>
 
         <div className="bg-white border border-slate-200 rounded-xl p-5 space-y-2">
           <div className="p-2 bg-amber-50 border border-amber-100 rounded-lg text-amber-600 w-fit">
-            <ShieldCheck className="w-4 h-4" />
+            <Clock className="w-4 h-4" />
           </div>
-          <div className="text-xs font-mono text-slate-400">NDA & Security</div>
-          <div className="text-sm font-bold text-slate-900">Confidentiality Assured</div>
-          <div className="text-[11px] text-slate-500">NDAs executed on request</div>
+          <div className="text-xs font-mono text-slate-400">Turnaround Time</div>
+          <div className="text-sm font-bold text-slate-900">
+            Within 24 Hours
+          </div>
+          <div className="text-[11px] text-slate-500">Standard business days</div>
         </div>
       </section>
 

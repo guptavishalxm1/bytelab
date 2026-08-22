@@ -27,7 +27,7 @@ export default function TrustBar() {
               Built as a Registered Business Entity
             </h2>
             <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
-              ByteLab Infotech operates as a formally registered technology business with recognized corporate identity and tax compliance documentation.
+              ByteLab Infotech operates as a formally registered technology business (Legal Entity: {COMPANY_DATA.legalName}) with recognized corporate identity and tax compliance documentation.
             </p>
           </div>
 
@@ -45,7 +45,6 @@ export default function TrustBar() {
         {/* Credentials Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
           {COMPANY_DATA.credentials.map((cred) => {
-            const isDomain = cred.id === "domain";
             const icon =
               cred.id === "gst" ? (
                 <FileCheck className="w-4 h-4 text-emerald-400" />
@@ -78,23 +77,21 @@ export default function TrustBar() {
 
                   <div className="mt-3">
                     <div className="text-sm font-semibold text-slate-100">{cred.label}</div>
-                    <div className="text-xs font-mono text-slate-300 mt-1 flex items-center justify-between">
+                    <div className="text-xs font-mono text-slate-300 mt-1 flex items-center justify-between gap-1">
                       <span className="truncate">{cred.identifier}</span>
-                      {isDomain && (
-                        <button
-                          type="button"
-                          onClick={() => handleCopy(cred.value, cred.id)}
-                          className="p-1 hover:text-white transition-colors text-slate-500"
-                          title="Copy domain"
-                          aria-label="Copy domain name"
-                        >
-                          {copiedId === cred.id ? (
-                            <Check className="w-3.5 h-3.5 text-emerald-400" />
-                          ) : (
-                            <Copy className="w-3.5 h-3.5" />
-                          )}
-                        </button>
-                      )}
+                      <button
+                        type="button"
+                        onClick={() => handleCopy(cred.identifier, cred.id)}
+                        className="p-1 hover:text-white transition-colors text-slate-500 shrink-0"
+                        title={`Copy ${cred.label}`}
+                        aria-label={`Copy ${cred.label}`}
+                      >
+                        {copiedId === cred.id ? (
+                          <Check className="w-3.5 h-3.5 text-emerald-400" />
+                        ) : (
+                          <Copy className="w-3.5 h-3.5" />
+                        )}
+                      </button>
                     </div>
                   </div>
                 </div>

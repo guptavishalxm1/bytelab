@@ -23,15 +23,24 @@ export default function BusinessPage() {
     "@type": "Organization",
     name: COMPANY_DATA.name,
     legalName: COMPANY_DATA.legalName,
+    taxID: COMPANY_DATA.gstin,
     url: "https://bytelabinfotech.in",
     logo: "https://bytelabinfotech.in/logo.png",
     email: COMPANY_DATA.primaryEmail,
+    telephone: COMPANY_DATA.phone,
     address: {
       "@type": "PostalAddress",
+      addressRegion: "Uttar Pradesh",
       addressCountry: "IN",
+    },
+    founder: {
+      "@type": "Person",
+      name: COMPANY_DATA.proprietor,
+      email: COMPANY_DATA.primaryEmail,
     },
     contactPoint: {
       "@type": "ContactPoint",
+      telephone: COMPANY_DATA.phone,
       email: COMPANY_DATA.primaryEmail,
       contactType: "customer service",
       availableLanguage: ["English", "Hindi"],
@@ -55,7 +64,7 @@ export default function BusinessPage() {
           Business Information & Credentials
         </h1>
         <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-          ByteLab Infotech operates as a formally registered technology business entity. This page contains our verified corporate credentials, official communication channels, and legal disclosures for clients and enterprise partners.
+          ByteLab Infotech operates as a formally registered technology business entity under proprietor Vishal Gupta (Legal Entity: {COMPANY_DATA.legalName}). This page contains our verified corporate credentials, official communication channels, and statutory disclosures for clients, banking partners, and enterprise collaborators.
         </p>
       </section>
 
@@ -65,7 +74,7 @@ export default function BusinessPage() {
           <div>
             <h2 className="text-xl font-bold text-slate-900">Verified Organizational Credentials</h2>
             <p className="text-xs text-slate-500 mt-0.5">
-              Official registrations recognized under Indian statutory frameworks and global registries.
+              Official registrations recognized under Indian statutory frameworks (GSTIN / MSME) and global registries.
             </p>
           </div>
 
@@ -82,14 +91,14 @@ export default function BusinessPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {COMPANY_DATA.credentials.map((cred) => {
             const icon =
-              cred.id === "gst" ? (
+              cred.id === "gst" || cred.id === "pan" ? (
                 <FileCheck className="w-5 h-5 text-emerald-600" />
               ) : cred.id === "udyam" ? (
                 <Building className="w-5 h-5 text-blue-600" />
               ) : cred.id === "duns" ? (
                 <Hash className="w-5 h-5 text-cyan-600" />
               ) : (
-                <Globe className="w-5 h-5 text-blue-600" />
+                <FileCheck className="w-5 h-5 text-blue-600" />
               );
 
             return (
@@ -170,16 +179,31 @@ export default function BusinessPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 p-4 border-b border-slate-100 gap-1 sm:gap-0">
-            <div className="font-mono text-slate-500">Brand Identity</div>
-            <div className="sm:col-span-2 text-slate-900">{COMPANY_DATA.name}</div>
+            <div className="font-mono text-slate-500">Trade / Brand Identity</div>
+            <div className="sm:col-span-2 text-slate-900 font-medium">{COMPANY_DATA.name}</div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 p-4 border-b border-slate-100 gap-1 sm:gap-0" id="domain-verification">
-            <div className="font-mono text-slate-500">Official Web Domain</div>
-            <div className="sm:col-span-2 font-mono text-blue-600 font-semibold flex items-center gap-2">
-              <span>{COMPANY_DATA.domain}</span>
-              <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">
-                Verified DNS & SSL
+          <div className="grid grid-cols-1 sm:grid-cols-3 p-4 border-b border-slate-100 gap-1 sm:gap-0">
+            <div className="font-mono text-slate-500">Proprietor / Signatory</div>
+            <div className="sm:col-span-2 text-slate-900 font-medium">{COMPANY_DATA.proprietor}</div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 p-4 border-b border-slate-100 gap-1 sm:gap-0">
+            <div className="font-mono text-slate-500">GST Registration (GSTIN)</div>
+            <div className="sm:col-span-2 font-mono font-bold text-emerald-700 flex items-center gap-2">
+              <span>{COMPANY_DATA.gstin}</span>
+              <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-sans font-medium">
+                Active • Uttar Pradesh (09)
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 p-4 border-b border-slate-100 gap-1 sm:gap-0">
+            <div className="font-mono text-slate-500">Income Tax PAN</div>
+            <div className="sm:col-span-2 font-mono text-slate-900 font-semibold flex items-center gap-2">
+              <span>EIIPG9483D</span>
+              <span className="text-[10px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full font-sans font-medium">
+                Income Tax Dept, Govt of India
               </span>
             </div>
           </div>
@@ -194,6 +218,15 @@ export default function BusinessPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 p-4 border-b border-slate-100 gap-1 sm:gap-0">
+            <div className="font-mono text-slate-500">Direct Phone / Support</div>
+            <div className="sm:col-span-2 font-mono text-slate-900">
+              <a href={`tel:${COMPANY_DATA.rawPhone}`} className="hover:text-blue-600 transition-colors">
+                {COMPANY_DATA.phone}
+              </a>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 p-4 border-b border-slate-100 gap-1 sm:gap-0">
             <div className="font-mono text-slate-500">Operational Hours</div>
             <div className="sm:col-span-2 text-slate-700">{COMPANY_DATA.operatingHours}</div>
           </div>
@@ -201,7 +234,7 @@ export default function BusinessPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 p-4 gap-1 sm:gap-0">
             <div className="font-mono text-slate-500">Registered Category</div>
             <div className="sm:col-span-2 text-slate-700">
-              Software Engineering, Digital Product Development & IT Services
+              Software Engineering, Custom Digital Product Development & IT Consulting Services
             </div>
           </div>
         </div>

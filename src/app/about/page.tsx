@@ -64,7 +64,7 @@ export default function AboutPage() {
               Engineering First. <br />Business Outcomes Second.
             </h2>
             <div className="mt-4 p-3 bg-slate-50 border border-slate-100 rounded-lg text-xs font-mono text-slate-600">
-              Registered Entity • Domain: <span className="font-semibold text-slate-900">bytelabinfotech.in</span>
+              Registered Technology Entity • Legal Entity: <span className="font-semibold text-slate-900">{COMPANY_DATA.legalName}</span>
             </div>
           </div>
 
@@ -114,21 +114,36 @@ export default function AboutPage() {
           <div className="lg:col-span-4 space-y-4">
             <div className="p-6 bg-slate-900 border border-slate-800 rounded-xl space-y-3">
               <div className="w-14 h-14 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 font-mono font-bold text-xl">
-                BL
+                VG
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white">{leader.name}</h3>
                 <div className="text-xs font-mono text-blue-400">{leader.role}</div>
                 <div className="text-xs text-slate-400 mt-0.5">{leader.title}</div>
               </div>
-              <div className="pt-3 border-t border-slate-800 text-xs font-mono text-slate-400">
-                Direct Contact:{" "}
-                <a
-                  href={`mailto:${COMPANY_DATA.primaryEmail}`}
-                  className="text-slate-300 hover:text-blue-400 transition-colors"
-                >
-                  {COMPANY_DATA.primaryEmail}
-                </a>
+              <div className="pt-3 border-t border-slate-800 space-y-1.5 text-xs font-mono text-slate-400">
+                <div>
+                  Email:{" "}
+                  <a
+                    href={`mailto:${COMPANY_DATA.primaryEmail}`}
+                    className="text-slate-200 hover:text-blue-400 transition-colors"
+                  >
+                    {COMPANY_DATA.primaryEmail}
+                  </a>
+                </div>
+                <div>
+                  Phone:{" "}
+                  <a
+                    href={`tel:${COMPANY_DATA.rawPhone}`}
+                    className="text-slate-200 hover:text-blue-400 transition-colors"
+                  >
+                    {COMPANY_DATA.phone}
+                  </a>
+                </div>
+                <div>
+                  Legal:{" "}
+                  <span className="text-emerald-400">{COMPANY_DATA.legalName}</span>
+                </div>
               </div>
             </div>
           </div>

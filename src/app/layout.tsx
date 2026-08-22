@@ -105,17 +105,25 @@ const organizationSchema = {
   "@type": "Organization",
   name: COMPANY_DATA.name,
   legalName: COMPANY_DATA.legalName,
+  taxID: COMPANY_DATA.gstin,
   url: "https://bytelabinfotech.in",
   logo: "https://bytelabinfotech.in/logo.png",
   description: COMPANY_DATA.description,
   email: COMPANY_DATA.primaryEmail,
+  telephone: COMPANY_DATA.phone,
   foundingDate: `${COMPANY_DATA.establishedYear}`,
+  founder: {
+    "@type": "Person",
+    name: COMPANY_DATA.proprietor,
+    email: COMPANY_DATA.primaryEmail,
+  },
   sameAs: [
     "https://linkedin.com",
-    "https://github.com",
+    "https://github.com/guptavishalxm1",
   ],
   address: {
     "@type": "PostalAddress",
+    addressRegion: "Uttar Pradesh",
     addressCountry: "IN",
   },
   knowsAbout: [
