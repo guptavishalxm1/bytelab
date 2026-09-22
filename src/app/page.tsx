@@ -95,7 +95,7 @@ export default function HomePage() {
                   <div><span className="text-purple-400">@Service</span></div>
                   <div><span className="text-purple-400">@Transactional</span></div>
                   <div><span className="text-blue-400">public class</span> <span className="text-yellow-300">OrderProcessingService</span> &#123;</div>
-                  <div className="pl-4 text-slate-400">// Strict ACID validation & inventory locking</div>
+                  <div className="pl-4 text-slate-400">{"// Strict ACID validation & inventory locking"}</div>
                   <div className="pl-4"><span className="text-purple-400">public</span> <span className="text-cyan-300">OrderResult</span> <span className="text-blue-300">processTransaction</span>(<span className="text-cyan-300">OrderRequest</span> req) &#123;</div>
                   <div className="pl-8"><span className="text-slate-300">inventoryRepo.acquireLock(req.skuId());</span></div>
                   <div className="pl-8"><span className="text-slate-300">reconciliationEngine.auditRecord(req);</span></div>

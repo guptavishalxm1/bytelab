@@ -34,10 +34,12 @@ export default function Navbar() {
   }, []);
 
   // Close menus on route change
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
-  }, [pathname]);
+  }
 
   // Close dropdown on outside click
   useEffect(() => {

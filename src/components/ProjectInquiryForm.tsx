@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, CheckCircle2, ShieldCheck, Mail, Phone, Clock, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle2, ShieldCheck, Mail, Phone, Clock, ArrowRight, MessageSquareCheck } from "lucide-react";
 import { COMPANY_DATA } from "@/data/company";
 
 const PROJECT_TYPES = [
@@ -42,6 +43,7 @@ export default function ProjectInquiryForm() {
     budgetRange: BUDGET_RANGES[1],
     timeline: TIMELINES[1],
     description: "",
+    rcsConsent: false,
   });
 
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -50,8 +52,13 @@ export default function ProjectInquiryForm() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target;
+    if (type === "checkbox") {
+      const { checked } = e.target as HTMLInputElement;
+      setFormData((prev) => ({ ...prev, [name]: checked }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -154,6 +161,12 @@ export default function ProjectInquiryForm() {
                 <span className="font-semibold text-slate-900">{formData.projectType}</span>. Our technical team is reviewing your requirements and will reach out to{" "}
                 <span className="font-mono text-blue-600 font-semibold">{formData.email}</span> within 24 business hours.
               </p>
+              {formData.rcsConsent && (
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg text-xs font-medium">
+                  <MessageSquareCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <span>RCS &amp; SMS project notifications enabled for provided number</span>
+                </div>
+              )}
               <button
                 type="button"
                 onClick={() => {
@@ -167,6 +180,7 @@ export default function ProjectInquiryForm() {
                     budgetRange: BUDGET_RANGES[1],
                     timeline: TIMELINES[1],
                     description: "",
+                    rcsConsent: false,
                   });
                 }}
                 className="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-700 underline underline-offset-4"
@@ -323,11 +337,54 @@ export default function ProjectInquiryForm() {
                 />
               </div>
 
+              {/* RCS / SMS Compliance Authorization Checkbox */}
+              <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl space-y-2">
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="rcsConsent"
+                    name="rcsConsent"
+                    checked={formData.rcsConsent}
+                    onChange={handleChange}
+                    className="mt-0.5 w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-600 focus:ring-offset-0 cursor-pointer shrink-0"
+                  />
+                  <label htmlFor="rcsConsent" className="text-xs text-slate-800 leading-relaxed cursor-pointer select-none font-medium">
+                    I hereby authorize ByteLab Infotech to send SMS, RCS messages, and promotional or informational messages to the phone number provided above.
+                  </label>
+                </div>
+                <div className="pl-7 text-[11px] text-slate-500 leading-normal space-y-1">
+                  <p>
+                    Message and data rates may apply. Message frequency varies. You can opt out at any time by replying <span className="font-mono font-semibold text-slate-700">STOP</span>, or reply <span className="font-mono font-semibold text-slate-700">HELP</span> for assistance. Consent is voluntary and not a condition of purchase.
+                  </p>
+                  <p>
+                    By checking this box, you also confirm that you have reviewed and agreed to our{" "}
+                    <Link
+                      href="/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 font-medium underline underline-offset-2 hover:text-blue-700"
+                    >
+                      Privacy Policy
+                    </Link>{" "}
+                    and{" "}
+                    <Link
+                      href="/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 font-medium underline underline-offset-2 hover:text-blue-700"
+                    >
+                      Terms of Service
+                    </Link>
+                    .
+                  </p>
+                </div>
+              </div>
+
               <div className="pt-2">
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-lg text-sm font-semibold text-white bg-slate-900 hover:bg-blue-600 transition-colors shadow-xs"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-lg text-sm font-semibold text-white bg-slate-900 hover:bg-blue-600 transition-colors shadow-xs cursor-pointer"
                 >
                   {status === "submitting" ? (
                     <span>Submitting Inquiry...</span>

@@ -59,31 +59,84 @@ export default function TermsPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-lg font-bold text-slate-900">4. Cancellation & Refund Policy</h2>
+          <h2 className="text-lg font-bold text-slate-900">4. Cancellation &amp; Refund Policy</h2>
           <p>
             Project cancellations and refund requests are governed by our dedicated{" "}
             <a href="/refund-policy" className="text-blue-600 font-semibold hover:underline">
-              Cancellation & Refund Policy
+              Cancellation &amp; Refund Policy
             </a>. Advance milestone retainers for work not yet commenced are refundable minus statutory transaction fees. Work commenced or delivered is billed pro-rata.
           </p>
         </section>
 
+        {/* Dedicated SMS / RCS Terms of Service Section */}
+        <section className="p-5 sm:p-6 bg-slate-50 border border-slate-200 rounded-xl space-y-4">
+          <div className="space-y-1">
+            <div className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600">
+              Telecommunications &amp; Messaging Compliance
+            </div>
+            <h2 className="text-lg font-bold text-slate-900">
+              5. SMS &amp; RCS Messaging Program Terms
+            </h2>
+          </div>
+
+          <div className="space-y-3 text-xs sm:text-sm text-slate-700 leading-relaxed">
+            <p>
+              ByteLab Infotech offers an optional SMS and Rich Communication Services (RCS) messaging program to provide prompt communications regarding project inquiries, architectural discovery schedules, milestone deliveries, and technical alerts. By submitting your mobile phone number and checking the authorization checkbox on our forms, you agree to the following terms:
+            </p>
+
+            <ul className="list-disc pl-5 space-y-2 text-slate-600">
+              <li>
+                <strong>Program Identity &amp; Scope:</strong> The messaging program operates under the brand name <strong>ByteLab Infotech</strong>. Messages include transactional project updates, architecture consultation scheduling, service announcements, and informational or promotional technology briefings.
+              </li>
+              <li>
+                <strong>Consent &amp; Voluntary Participation:</strong> Providing consent to receive SMS or RCS messages is completely voluntary and is <em>not</em> a condition of purchase or contracting our software engineering services. You may engage ByteLab Infotech through email or telephone without consenting to text messaging.
+              </li>
+              <li>
+                <strong>Opt-Out Instructions (STOP):</strong> You can cancel the SMS/RCS service at any time. Simply reply <span className="font-mono font-bold text-slate-900">STOP</span> to any mobile message received from us. Upon receipt of your STOP command, we will send an unsubscribe confirmation message. Thereafter, no further SMS or RCS messages will be sent unless re-authorized by you.
+              </li>
+              <li>
+                <strong>Support &amp; Customer Care (HELP):</strong> For questions or troubleshooting regarding the messaging program, reply <span className="font-mono font-bold text-slate-900">HELP</span> to any message, or contact our engineering support team directly at{" "}
+                <a href={`mailto:${COMPANY_DATA.primaryEmail}`} className="text-blue-600 font-mono underline hover:text-blue-700">
+                  {COMPANY_DATA.primaryEmail}
+                </a>{" "}
+                or{" "}
+                <a href={`tel:${COMPANY_DATA.rawPhone}`} className="text-blue-600 font-mono underline hover:text-blue-700">
+                  {COMPANY_DATA.phone}
+                </a>.
+              </li>
+              <li>
+                <strong>Message Rates &amp; Frequency:</strong> Standard message and data rates may apply as determined by your wireless telecommunications carrier plan. Message frequency varies based on project development cycles and the frequency of your inquiries.
+              </li>
+              <li>
+                <strong>Carrier Liability Disclaimer:</strong> Telecommunications carriers (including Airtel, Jio, Vodafone Idea, AT&amp;T, T-Mobile, Verizon, and international operators) are not liable for delayed, intercepted, or undelivered messages.
+              </li>
+              <li>
+                <strong>Privacy Protection:</strong> All mobile phone numbers, subscriber records, and opt-in consent data are protected under our{" "}
+                <a href="/privacy" className="text-blue-600 font-semibold underline hover:text-blue-700">
+                  Privacy Policy
+                </a>
+                . Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes.
+              </li>
+            </ul>
+          </div>
+        </section>
+
         <section className="space-y-3">
-          <h2 className="text-lg font-bold text-slate-900">5. Intellectual Property Rights</h2>
+          <h2 className="text-lg font-bold text-slate-900">6. Intellectual Property Rights</h2>
           <p>
             Upon full financial settlement of milestone deliverables as agreed under the relevant contract, 100% intellectual property ownership of bespoke code, database schemas, and application assets is transferred to the client.
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-lg font-bold text-slate-900">6. Limitation of Liability</h2>
+          <h2 className="text-lg font-bold text-slate-900">7. Limitation of Liability</h2>
           <p>
             ByteLab Infotech engineers software according to recognized industry best practices. However, neither party shall be liable for indirect, incidental, or consequential damages resulting from third-party cloud infrastructure outages, telecommunication disruptions, or unannounced third-party API deprecations.
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-lg font-bold text-slate-900">7. Governing Law & Dispute Resolution</h2>
+          <h2 className="text-lg font-bold text-slate-900">8. Governing Law &amp; Dispute Resolution</h2>
           <p>
             These terms are governed by and construed in accordance with the laws of India. Any legal disputes arising in connection with these terms shall be subject to the exclusive jurisdiction of the competent courts in {COMPANY_DATA.headquarters.state}, India.
           </p>
