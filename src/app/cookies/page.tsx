@@ -1,13 +1,12 @@
 import React from "react";
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { COMPANY_DATA } from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Cookie Policy | ByteLab Infotech",
-  description: "Official Cookie Policy for ByteLab Infotech (bytelabinfotech.in).",
+  description: "Official Cookie Policy for ByteLab Infotech (bytelabinfo.com).",
   alternates: {
-    canonical: "https://bytelabinfotech.in/cookies",
+    canonical: "https://bytelabinfo.com/cookies",
   },
 };
 
@@ -21,7 +20,7 @@ export default function CookiesPage() {
           Cookie Policy
         </h1>
         <p className="text-xs font-mono text-slate-500">
-          Last Updated: January 2026 • bytelabinfotech.in
+          Last Updated: January 2026 • bytelabinfo.com
         </p>
       </div>
 

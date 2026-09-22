@@ -5,9 +5,9 @@ import { COMPANY_DATA } from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | ByteLab Infotech",
-  description: "Official Privacy Policy of ByteLab Infotech (bytelabinfotech.in).",
+  description: "Official Privacy Policy of ByteLab Infotech (bytelabinfo.com).",
   alternates: {
-    canonical: "https://bytelabinfotech.in/privacy",
+    canonical: "https://bytelabinfo.com/privacy",
   },
 };
 
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
           <h2 className="text-lg font-bold text-slate-900">1. Introduction &amp; Scope</h2>
           <p>
             ByteLab Infotech (owned and operated by <strong>{COMPANY_DATA.legalName}</strong>, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) operates the website{" "}
-            <strong>https://bytelabinfotech.in</strong>. This Privacy Policy outlines how we collect, handle, protect, and process information collected through our official digital touchpoints, project inquiries, and communication channels (including SMS and RCS messaging).
+            <strong>https://bytelabinfo.com</strong>. This Privacy Policy outlines how we collect, handle, protect, and process information collected through our official digital touchpoints, project inquiries, and communication channels (including SMS and RCS messaging).
           </p>
         </section>
 

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "Explore real-world software engineering case studies delivered by ByteLab Infotech across enterprise inventory ERP, fleet telematics, financial reconciliation, and clinical automation.",
   alternates: {
-    canonical: "https://bytelabinfotech.in/work",
+    canonical: "https://bytelabinfo.com/work",
   },
 };
 
@@ -24,7 +24,7 @@ export default function WorkPage() {
       "@type": "ListItem",
       position: index + 1,
       name: project.title,
-      url: `https://bytelabinfotech.in/work/${project.slug}`,
+      url: `https://bytelabinfo.com/work/${project.slug}`,
       description: project.shortSummary,
     })),
   };

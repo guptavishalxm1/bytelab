@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Official Cancellation and Refund Policy for software engineering, web development, and consulting services by ByteLab Infotech (Legal Entity: VISHAL GUPTA).",
   alternates: {
-    canonical: "https://bytelabinfotech.in/refund-policy",
+    canonical: "https://bytelabinfo.com/refund-policy",
   },
 };
 

@@ -27,12 +27,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${project.title} | Case Study | ByteLab Infotech`,
     description: project.shortSummary,
     alternates: {
-      canonical: `https://bytelabinfotech.in/work/${project.slug}`,
+      canonical: `https://bytelabinfo.com/work/${project.slug}`,
     },
     openGraph: {
       title: `${project.title} - Engineering Case Study`,
       description: project.shortSummary,
-      url: `https://bytelabinfotech.in/work/${project.slug}`,
+      url: `https://bytelabinfo.com/work/${project.slug}`,
     },
   };
 }
@@ -50,19 +50,19 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    headline: project.title,
+    headline: `${project.title} - Architecture & Implementation Case Study`,
     description: project.shortSummary,
     author: {
       "@type": "Organization",
       name: "ByteLab Infotech",
-      url: "https://bytelabinfotech.in",
+      url: "https://bytelabinfo.com",
     },
     publisher: {
       "@type": "Organization",
       name: "ByteLab Infotech",
       logo: {
         "@type": "ImageObject",
-        url: "https://bytelabinfotech.in/logo.png",
+        url: "https://bytelabinfo.com/logo.png",
       },
     },
     datePublished: `${project.year}-01-01`,

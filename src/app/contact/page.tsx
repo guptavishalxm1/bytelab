@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Discuss your software development requirements directly with technical leadership at ByteLab Infotech. Submit project scopes, budget ranges, and timelines for review.",
   alternates: {
-    canonical: "https://bytelabinfotech.in/contact",
+    canonical: "https://bytelabinfo.com/contact",
   },
 };
 
@@ -28,7 +28,7 @@ export default function ContactPage() {
       taxID: COMPANY_DATA.gstin,
       email: COMPANY_DATA.primaryEmail,
       telephone: COMPANY_DATA.phone,
-      url: "https://bytelabinfotech.in",
+      url: "https://bytelabinfo.com",
     },
   };
 

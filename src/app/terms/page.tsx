@@ -5,9 +5,9 @@ import { COMPANY_DATA } from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Terms of Service | ByteLab Infotech",
-  description: "Official Terms of Service for ByteLab Infotech (bytelabinfotech.in).",
+  description: "Official Terms of Service for ByteLab Infotech (bytelabinfo.com).",
   alternates: {
-    canonical: "https://bytelabinfotech.in/terms",
+    canonical: "https://bytelabinfo.com/terms",
   },
 };
 
@@ -28,7 +28,7 @@ export default function TermsPage() {
       <div className="bg-white border border-slate-200 rounded-2xl p-8 sm:p-12 space-y-8 text-sm text-slate-700 leading-relaxed">
         {/* Entity Identification */}
         <section className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-1.5 text-xs font-mono text-slate-800">
-          <div className="font-bold text-slate-900 text-sm font-sans mb-1">Entity Details & Statutory Registry</div>
+          <div className="font-bold text-slate-900 text-sm font-sans mb-1">Entity Details &amp; Statutory Registry</div>
           <div><span className="text-slate-500">Legal Entity:</span> {COMPANY_DATA.legalName} (Proprietor: {COMPANY_DATA.proprietor})</div>
           <div><span className="text-slate-500">Trade / Brand:</span> {COMPANY_DATA.name}</div>
           <div><span className="text-slate-500">GSTIN:</span> <span className="font-bold text-blue-600">{COMPANY_DATA.gstin}</span></div>
@@ -40,7 +40,7 @@ export default function TermsPage() {
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-slate-900">1. Acceptance of Terms</h2>
           <p>
-            By accessing this website (<strong>https://bytelabinfotech.in</strong>) or engaging <strong>ByteLab Infotech</strong> (owned and operated by <strong>{COMPANY_DATA.legalName}</strong>) for software engineering, web development, mobile development, backend architectures, or consulting services, you agree to comply with and be bound by these Terms of Service.
+            By accessing this website (<strong>https://bytelabinfo.com</strong>) or engaging <strong>ByteLab Infotech</strong> (owned and operated by <strong>{COMPANY_DATA.legalName}</strong>) for software engineering, web development, mobile development, backend architectures, or consulting services, you agree to comply with and be bound by these Terms of Service.
           </p>
         </section>
 

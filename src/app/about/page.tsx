@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "Learn about ByteLab Infotech, our engineering-first philosophy, founder-led technical leadership, and commitment to building reliable, scalable software systems.",
   alternates: {
-    canonical: "https://bytelabinfotech.in/about",
+    canonical: "https://bytelabinfo.com/about",
   },
 };
 

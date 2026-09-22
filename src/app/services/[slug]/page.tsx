@@ -27,12 +27,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${service.title} | ByteLab Infotech`,
     description: service.shortDescription,
     alternates: {
-      canonical: `https://bytelabinfotech.in/services/${service.slug}`,
+      canonical: `https://bytelabinfo.com/services/${service.slug}`,
     },
     openGraph: {
       title: `${service.title} | ByteLab Infotech`,
       description: service.shortDescription,
-      url: `https://bytelabinfotech.in/services/${service.slug}`,
+      url: `https://bytelabinfo.com/services/${service.slug}`,
     },
   };
 }
@@ -63,7 +63,7 @@ export default async function ServiceDetailPage({ params }: Props) {
     provider: {
       "@type": "Organization",
       name: "ByteLab Infotech",
-      url: "https://bytelabinfotech.in",
+      url: "https://bytelabinfo.com",
     },
     description: service.shortDescription,
     serviceType: service.badge,

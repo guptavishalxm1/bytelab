@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Explore the verified technology stack utilized by ByteLab Infotech: Java, Spring Boot, Kotlin Android, PostgreSQL, Redis, Linux, and modern web architectures.",
   alternates: {
-    canonical: "https://bytelabinfotech.in/technology",
+    canonical: "https://bytelabinfo.com/technology",
   },
 };
 
@@ -27,7 +27,7 @@ export default function TechnologyPage() {
     author: {
       "@type": "Organization",
       name: "ByteLab Infotech",
-      url: "https://bytelabinfotech.in",
+      url: "https://bytelabinfo.com",
     },
   };
 

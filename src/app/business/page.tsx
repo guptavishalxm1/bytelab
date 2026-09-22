@@ -24,8 +24,8 @@ export default function BusinessPage() {
     name: COMPANY_DATA.name,
     legalName: COMPANY_DATA.legalName,
     taxID: COMPANY_DATA.gstin,
-    url: "https://bytelabinfotech.in",
-    logo: "https://bytelabinfotech.in/logo.png",
+    url: "https://bytelabinfo.com",
+    logo: "https://bytelabinfo.com/logo.png",
     email: COMPANY_DATA.primaryEmail,
     telephone: COMPANY_DATA.phone,
     address: {

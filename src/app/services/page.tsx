@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "Explore ByteLab Infotech's full engineering capabilities: custom software, web applications, Android mobile development, Java/Spring Boot backends, PostgreSQL databases, and business automation.",
   alternates: {
-    canonical: "https://bytelabinfotech.in/services",
+    canonical: "https://bytelabinfo.com/services",
   },
 };
 
@@ -24,7 +24,7 @@ export default function ServicesPage() {
       "@type": "ListItem",
       position: index + 1,
       name: service.title,
-      url: `https://bytelabinfotech.in/services/${service.slug}`,
+      url: `https://bytelabinfo.com/services/${service.slug}`,
       description: service.shortDescription,
     })),
   };
