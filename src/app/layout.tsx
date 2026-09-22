@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bytelabinfotech.in"),
+  metadataBase: new URL("https://bytelabinfo.com"),
   title: {
     default: "ByteLab Infotech | Software Development & Technology Engineering",
     template: "%s | ByteLab Infotech",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "ByteLab Infotech is a technology services and software engineering company architecting scalable web applications, native Android mobile apps, Java/Spring Boot backends, PostgreSQL databases, and business automation software.",
   keywords: [
     "ByteLab Infotech",
-    "bytelabinfotech.in",
+    "bytelabinfo.com",
     "software development company",
     "custom software development",
     "web application development",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     "business automation",
     "technology consulting",
   ],
-  authors: [{ name: "ByteLab Infotech", url: "https://bytelabinfotech.in" }],
+  authors: [{ name: "ByteLab Infotech", url: "https://bytelabinfo.com" }],
   creator: "ByteLab Infotech",
   publisher: "ByteLab Infotech",
   formatDetection: {
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     telephone: true,
   },
   alternates: {
-    canonical: "https://bytelabinfotech.in",
+    canonical: "https://bytelabinfo.com",
   },
   openGraph: {
     title: "ByteLab Infotech | Software Development & Technology Engineering",
     description:
       "Engineering-first software development company specializing in custom business software, scalable web platforms, native Android apps, and robust Java/Spring Boot backends.",
-    url: "https://bytelabinfotech.in",
+    url: "https://bytelabinfo.com",
     siteName: "ByteLab Infotech",
     locale: "en_US",
     type: "website",
@@ -106,8 +106,8 @@ const organizationSchema = {
   name: COMPANY_DATA.name,
   legalName: COMPANY_DATA.legalName,
   taxID: COMPANY_DATA.gstin,
-  url: "https://bytelabinfotech.in",
-  logo: "https://bytelabinfotech.in/logo.png",
+  url: "https://bytelabinfo.com",
+  logo: "https://bytelabinfo.com/logo.png",
   description: COMPANY_DATA.description,
   email: COMPANY_DATA.primaryEmail,
   telephone: COMPANY_DATA.phone,
@@ -142,10 +142,10 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "ByteLab Infotech",
-  url: "https://bytelabinfotech.in",
+  url: "https://bytelabinfo.com",
   potentialAction: {
     "@type": "SearchAction",
-    target: "https://bytelabinfotech.in/services?q={search_term_string}",
+    target: "https://bytelabinfo.com/services?q={search_term_string}",
     "query-input": "required name=search_term_string",
   },
 };
