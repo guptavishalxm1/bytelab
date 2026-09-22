@@ -5,7 +5,7 @@ import { PROJECTS_DATA } from "@/data/projects";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://bytelabinfotech.in";
+  const baseUrl = "https://bytelabinfo.com";
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
