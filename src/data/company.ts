@@ -34,8 +34,8 @@ export const COMPANY_DATA = {
   subHeadline: "Technology Built Around Your Business",
   description:
     "ByteLab Infotech is a technology services and software engineering organization owned and operated by Vishal Gupta (Legal Entity: VISHAL GUPTA). We architect and build dependable web applications, mobile apps, Java/Spring Boot backend systems, databases, and business automation workflows designed around real operational requirements.",
-  domain: "bytelabinfotech.in",
-  officialUrl: "https://bytelabinfotech.in",
+  domain: "bytelabinfo.com",
+  officialUrl: "https://bytelabinfo.com",
   primaryEmail: "connect@bytelabinfo.com",
   secondaryEmail: "vishal@bytelabinfo.com",
   supportEmail: "connect@bytelabinfo.com",
